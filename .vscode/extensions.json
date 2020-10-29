@@ -1,0 +1,18 @@
+{
+    "recommendations": [
+        "coenraads.bracket-pair-colorizer-2",
+        "mikestead.dotenv",
+        "dsznajder.es7-react-js-snippets",
+        "dbaeumer.vscode-eslint",
+        "esbenp.prettier-vscode",
+        "mkxml.vscode-filesize",
+        "ms-vscode.vscode-typescript-tslint-plugin",
+        "pkief.material-icon-theme",
+        "dracula-theme.theme-dracula",
+        "wix.vscode-import-cost",
+        "visualstudioexptteam.vscodeintellicode",
+        "christian-kohler.path-intellisense",
+        "eamodio.gitlens",
+        "streetsidesoftware.code-spell-checker"
+    ]
+}
