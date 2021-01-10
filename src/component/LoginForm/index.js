@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
-class LoginForm extends Component {
+
+class loginForm extends Component {
     constructor(props) {
         super(props)
         this.state = {
@@ -9,7 +10,7 @@ class LoginForm extends Component {
         }
     }
 
-    // hanlde input
+    // handle input
     isChangeInput = (event) => {
         const { name } = event.target
         const { value } = event.target
@@ -23,7 +24,7 @@ class LoginForm extends Component {
         account.email = this.state.email
         account.password = this.state.password
 
-        this.props.handleLogin(account)
+        // this.props.handleLogin(account)
     }
     render() {
         return (
@@ -93,4 +94,4 @@ const mapDispatchToProps = (dispatch, ownProps) => {
         }
     }
 }
-export default connect(mapStateToProps, mapDispatchToProps)(LoginForm)
+export default connect(null, null)(loginForm)

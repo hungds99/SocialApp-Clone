@@ -4,7 +4,7 @@ import 'firebase/firestore'
 import 'firebase/storage'
 
 // For Firebase JS SDK v7.20.0 and later, measurementId is optional
-var firebaseConfig = {
+const firebaseConfig = {
     apiKey: 'AIzaSyAJtUkOHgGb5aSimcdmj_CJ9U4PMYDuRu4',
     authDomain: 'facebook-plus-2021.firebaseapp.com',
     databaseURL: 'https://facebook-plus-2021-default-rtdb.firebaseio.com',

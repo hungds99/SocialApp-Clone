@@ -1,6 +1,8 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
-class Register extends Component {
+import { registerUser } from '../../redux/actions'
+
+class registerForm extends Component {
     constructor(props) {
         super(props)
         this.state = {
@@ -72,7 +74,7 @@ class Register extends Component {
         account.month = this.state.month
         account.year = this.state.year
 
-        this.props.createAccount(account)
+        this.props.registerUser(account)
     }
     render() {
         return (
@@ -278,7 +280,7 @@ class Register extends Component {
                                     <button
                                         type="reset"
                                         className="btn register-btn"
-                                        onClick={() => this.isSaveInput()}
+                                        onClick={this.isSaveInput}
                                     >
                                         Đăng ký
                                     </button>
@@ -293,18 +295,10 @@ class Register extends Component {
     }
 }
 
-const mapStateToProps = (state, ownProps) => {
-    return {
-        account: state.account
-    }
-}
+// const mapStateToProps = (state, ownProps) => {
+//     return {
+//         account: state.account
+//     }
+// }
 
-const mapDispatchToProps = (dispatch, ownProps) => {
-    return {
-        createAccount: (account) => {
-            dispatch({ type: 'REGISTER', account })
-        }
-    }
-}
-
-export default connect(mapStateToProps, mapDispatchToProps)(Register)
+export default connect(null, { registerUser })(registerForm)
