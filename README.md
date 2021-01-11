@@ -13,6 +13,8 @@
 
 Chạy theo các bước:
 
+#### `git clone https://github.com/hungds99/SocialApp-Clone.git`
+#### `cd SocialApp-Clone`
 #### `npm install`
 #### `npm start`
 
