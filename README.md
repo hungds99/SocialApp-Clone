@@ -16,5 +16,5 @@ Chạy theo các bước:
 ### `npm install`
 ### `npm start`
 
-Chạy ứng dụng ở chế độ phát triển.
+Chạy ứng dụng ở chế độ phát triển.\
 Mở [http://localhost:3000](http://localhost:3000) để xem nó trên trình duyệt.
