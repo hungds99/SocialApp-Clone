@@ -1,13 +1,20 @@
-# Getting Started with Create React App
+# Đồ án môn ReactJS
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+* Giảng viên hướng dẫn: Lê Văn Khanh
+* Nhóm: NewbieTeam
+* Thành viên: 
+    - Đinh Sỹ Hùng (Trưởng nhóm)
+    - Nguyễn Văn Quân
+    - Bùi Thị Kim Chi
+    - Võ Văn Thành
+    - Nguyễn Đình Việt
 
-## Available Scripts
+## Khởi chạy dự án
 
-In the project directory, you can run:
+Chạy theo các bước:
 
 ### `npm install`
 ### `npm start`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+Chạy ứng dụng ở chế độ phát triển.
+Mở [http://localhost:3000](http://localhost:3000) để xem nó trên trình duyệt.
