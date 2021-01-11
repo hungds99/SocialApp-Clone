@@ -21,3 +21,5 @@ Chạy theo các bước:
 
 Chạy ứng dụng ở chế độ phát triển.\
 Mở [http://localhost:3000](http://localhost:3000) để xem nó trên trình duyệt.
+
+## Các chức năng
