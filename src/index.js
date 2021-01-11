@@ -6,6 +6,8 @@ import './index.css';
 import store from './redux/store';
 import reportWebVitals from './reportWebVitals';
 
+// commit
+
 ReactDOM.render(
   <Provider store={store}>
     <App />
