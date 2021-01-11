@@ -1,4 +1,4 @@
-# Đồ án môn ReactJS
+# Đồ án môn ReactJS - Ứng dụng mạng xã hội (Clone Facebook.com vs Gapo.vn)
 
 * Giảng viên hướng dẫn: Lê Văn Khanh
 * Nhóm: NewbieTeam
