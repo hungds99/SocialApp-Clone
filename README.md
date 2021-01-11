@@ -4,10 +4,11 @@
 * Nhóm: NewbieTeam
 * Thành viên: 
     - Đinh Sỹ Hùng (Trưởng nhóm)
-    - Nguyễn Văn Quân
-    - Bùi Thị Kim Chi
-    - Võ Văn Thành
-    - Nguyễn Đình Việt
+    - Nguyễn Văn Quân (Code)
+    - Bùi Thị Kim Chi (Test - Word - Slide)
+    - Võ Văn Thành (Code)
+    - Nguyễn Đình Việt (Code)
+* Phân chia công việc: https://trello.com/newbieteam4
 
 ## Khởi chạy dự án
 
