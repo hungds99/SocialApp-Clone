@@ -1,9 +1,45 @@
 import React, { Component } from 'react'
 import LoginForm from '../component/LoginForm'
 import RegisterForm from '../component/RegisterForm'
+import { dataConnect } from '../configs/firebaseConfig'
+import Cookies from 'js-cookie'
+import { Redirect } from 'react-router-dom'
 
 class SignUp extends Component {
+    constructor(props) {
+        super(props)
+        this.state = {
+            isRedirect: false,
+            ErrorMessage: '',
+            account: {}
+        }
+    }
+
+    handleLogin = (account) => {
+        // console.log(account.email)
+        dataConnect.on('value', (accounts) => {
+            accounts.forEach((element) => {
+                if (
+                    element.val().email === account.email &&
+                    element.val().password === account.password
+                ) {
+                    Cookies.set('user', element.val())
+                    this.setState({ isRedirect: true })
+                    this.setState({ ErrorMessage: '' })
+                } else {
+                    this.setState({
+                        ErrorMessage: 'Mật khẩu hoặc tài khoản không đúng'
+                    })
+                }
+            })
+        })
+    }
+
     render() {
+        if (this.state.isRedirect === true) {
+            return <Redirect to="/" />
+        }
+        // console.log(Cookies.get('user'))
         return (
             // Login
             <div className="body-login">
@@ -35,7 +71,10 @@ class SignUp extends Component {
                     {/* End left */}
 
                     {/* Right */}
-                    <LoginForm />
+                    <LoginForm
+                        handleLogin={(account) => this.handleLogin(account)}
+                        ErrorMessage={this.state.ErrorMessage}
+                    />
                     {/* End right */}
 
                     {/* Modal */}
