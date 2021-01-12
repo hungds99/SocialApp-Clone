@@ -1,6 +1,8 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { registerUser } from '../../redux/actions'
+import isEmpty from 'validator/lib/isEmpty'
+import isEmail from 'validator/lib/isEmail'
 
 class registerForm extends Component {
     constructor(props) {
@@ -12,8 +14,40 @@ class registerForm extends Component {
             password: '',
             day: '',
             month: '',
-            year: ''
+            year: '',
+            gender: 'woman',
+            ErrorMessage: {}
         }
+    }
+
+    // Validate input Login
+    isValidate = () => {
+        const msg = {}
+        if (isEmpty(this.state.firstName)) {
+            msg.firstName = 'Nhập họ của bạn'
+        }
+
+        if (isEmpty(this.state.lastName)) {
+            msg.lastName = 'Nhập tên của bạn'
+        }
+
+        if (isEmpty(this.state.email)) {
+            msg.email = 'Nhập địa chỉ email của bạn!!!'
+        } else if (!isEmail(this.state.email)) {
+            msg.email = 'Nhập đúng địa chỉ email của bạn!!!'
+        }
+
+        if (isEmpty(this.state.password)) {
+            msg.password = 'Nhập mật khẩu của bạn'
+        }
+
+        if (isEmpty(this.state.day && this.state.month && this.state.year)) {
+            msg.date = 'Chọn ngày tháng năm sinh của bạn'
+        }
+
+        this.setState({ ErrorMessage: msg })
+        if (Object.keys(msg).length > 0) return false
+        return true
     }
 
     // Show option date in select
@@ -65,6 +99,9 @@ class registerForm extends Component {
 
     // Push to redux
     isSaveInput = () => {
+        const isValid = this.isValidate()
+        if (!isValid) return
+
         let account = {}
         account.firstName = this.state.firstName
         account.lastName = this.state.lastName
@@ -73,8 +110,10 @@ class registerForm extends Component {
         account.day = this.state.day
         account.month = this.state.month
         account.year = this.state.year
+        account.gender = this.state.gender
 
         this.props.registerUser(account)
+        // console.log(account)
     }
     render() {
         return (
@@ -118,6 +157,9 @@ class registerForm extends Component {
                                                 this.isChangeInput(event)
                                             }
                                         />
+                                        <small className="font-italic text-danger mb-3">
+                                            {this.state.ErrorMessage.firstName}
+                                        </small>
                                     </div>
                                     <div className="form-group col-6">
                                         <input
@@ -129,6 +171,9 @@ class registerForm extends Component {
                                                 this.isChangeInput(event)
                                             }
                                         />
+                                        <small className="font-italic text-danger mb-3">
+                                            {this.state.ErrorMessage.lastName}
+                                        </small>
                                     </div>
                                 </div>
                                 <div className="form-group mt-2">
@@ -141,6 +186,9 @@ class registerForm extends Component {
                                             this.isChangeInput(event)
                                         }
                                     />
+                                    <small className="font-italic text-danger mb-3">
+                                        {this.state.ErrorMessage.email}
+                                    </small>
                                 </div>
                                 <div className="form-group mt-2">
                                     <input
@@ -152,6 +200,9 @@ class registerForm extends Component {
                                             this.isChangeInput(event)
                                         }
                                     />
+                                    <small className="font-italic text-danger mb-3">
+                                        {this.state.ErrorMessage.password}
+                                    </small>
                                 </div>
                                 <div className="form-row mt-2">
                                     <label className="label-login mb-1">
@@ -198,6 +249,9 @@ class registerForm extends Component {
                                                 {this.showYear()}
                                             </select>
                                         </div>
+                                        <small className="font-italic text-danger mb-3">
+                                            {this.state.ErrorMessage.date}
+                                        </small>
                                     </div>
                                 </div>
                                 <div className="form-row mt-2">
@@ -210,6 +264,15 @@ class registerForm extends Component {
                                             <label className="form-check-label d-flex justify-content-between">
                                                 Nữ
                                                 <input
+                                                    checked={
+                                                        this.state.gender ===
+                                                        'woman'
+                                                    }
+                                                    onChange={(event) =>
+                                                        this.isChangeInput(
+                                                            event
+                                                        )
+                                                    }
                                                     type="radio"
                                                     className="form-check-input p-2"
                                                     name="gender"
@@ -221,6 +284,15 @@ class registerForm extends Component {
                                             <label className="form-check-label  d-flex justify-content-between">
                                                 Nam
                                                 <input
+                                                    checked={
+                                                        this.state.gender ===
+                                                        'man'
+                                                    }
+                                                    onChange={(event) =>
+                                                        this.isChangeInput(
+                                                            event
+                                                        )
+                                                    }
                                                     type="radio"
                                                     className="form-check-input"
                                                     name="gender"
@@ -232,10 +304,19 @@ class registerForm extends Component {
                                             <label className="form-check-label d-flex justify-content-between">
                                                 Khác
                                                 <input
+                                                    checked={
+                                                        this.state.gender ===
+                                                        'undefined'
+                                                    }
+                                                    onChange={(event) =>
+                                                        this.isChangeInput(
+                                                            event
+                                                        )
+                                                    }
                                                     type="radio"
                                                     className="form-check-input"
                                                     name="gender"
-                                                    value="more"
+                                                    value="undefined"
                                                 />
                                             </label>
                                         </div>
@@ -278,7 +359,7 @@ class registerForm extends Component {
                                 </div>
                                 <div className="text-center">
                                     <button
-                                        type="reset"
+                                        type="button"
                                         className="btn register-btn"
                                         onClick={this.isSaveInput}
                                     >

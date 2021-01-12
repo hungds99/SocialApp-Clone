@@ -1,0 +1,80 @@
+/* Register */
+.modal-dialog {
+    margin-top: 100px;
+}
+.modal-title {
+    color: #1c1e21;
+    font-family: SFProDisplay-Bold, Helvetica, Arial, sans-serif;
+    font-size: 32px;
+    line-height: 38px;
+    margin-bottom: 0;
+    font-weight: 600;
+    float: left !important;
+    padding-bottom: 0;
+}
+
+.modal-header p {
+    color: #606770;
+    font-family: SFProText-Regular, Helvetica, Arial, sans-serif;
+    font-size: 15px;
+    line-height: 24px;
+    margin-bottom: 0;
+}
+.label-login {
+    color: #606770;
+    font-family: SFProText-Medium, Helvetica, Arial, sans-serif;
+    font-size: 12px;
+    font-weight: normal;
+    line-height: 20px;
+    margin-bottom: 0;
+    margin-top: 2px;
+}
+.commit-content {
+    color: #777;
+    font-size: 11px;
+}
+.register-btn {
+    background: none;
+    background-color: #00a400;
+    border: none;
+    border-radius: 6px;
+    box-shadow: none;
+    color: #fff;
+    font-size: 18px;
+    font-weight: 600;
+    height: 36px;
+    overflow: hidden;
+    padding: 0 32px;
+    text-shadow: none;
+}
+
+.create-page a {
+    text-decoration: none;
+    font-family: SFProText-Semibold, Helvetica, Arial, sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    color: #1c1e21;
+}
+
+.gender-label {
+    border-radius: 4px;
+    background-color: #fff;
+    border: 1px solid #ccd0d5;
+    box-sizing: border-box;
+    display: inline-block;
+    flex: 1 0 auto;
+    font-weight: normal;
+    height: 36px;
+    /* margin: 8px 6px 6px; */
+    padding: 0;
+    width: 10px;
+}
+
+.gender-area {
+    padding-left: 12px;
+}
+.form-check-label {
+    padding-left: 1rem;
+    padding-right: 1rem;
+    padding-top: 0.3rem;
+}

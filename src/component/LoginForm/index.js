@@ -1,12 +1,15 @@
 import React, { Component } from 'react'
-import { connect } from 'react-redux'
+import isEmail from 'validator/lib/isEmail'
+// import { connect } from 'react-redux'
+import isEmpty from 'validator/lib/isEmpty'
 
-class loginForm extends Component {
+export default class LoginForm extends Component {
     constructor(props) {
         super(props)
         this.state = {
             email: '',
-            password: ''
+            password: '',
+            ErrorMessage: {}
         }
     }
 
@@ -18,20 +21,50 @@ class loginForm extends Component {
         this.setState({ [name]: value })
     }
 
+    // Validate input Login
+    isValidate = () => {
+        const msg = {}
+        if (isEmpty(this.state.email)) {
+            msg.email = 'Nhập địa chỉ email của bạn!!!'
+        } else if (!isEmail(this.state.email)) {
+            msg.email = 'Nhập đúng địa chỉ email của bạn!!!'
+        }
+
+        if (isEmpty(this.state.password)) {
+            msg.password = 'Nhập mật khẩu của bạn'
+        }
+
+        this.setState({ ErrorMessage: msg })
+        if (Object.keys(msg).length > 0) return false
+        return true
+    }
+
     // Send account to Login
     isSubmit = () => {
+        // event.preventDefault()
+        const isValid = this.isValidate()
+        if (!isValid) return
+
         let account = {}
         account.email = this.state.email
         account.password = this.state.password
 
-        // this.props.handleLogin(account)
+        this.props.handleLogin(account)
     }
+
+    // Render message error password or email
+    isShowMess = () => {
+        if (this.props.ErrorMessage !== '') {
+            return this.props.ErrorMessage
+        } else return ''
+    }
+
     render() {
         return (
             <div className="right-login col-lg-6 col-md-12">
                 <div className="login-area">
                     <form className="login-form p-3">
-                        <div className="mb-3">
+                        <div className="">
                             <input
                                 type="email"
                                 name="email"
@@ -40,7 +73,10 @@ class loginForm extends Component {
                                 onChange={(event) => this.isChangeInput(event)}
                             />
                         </div>
-                        <div className="mb-3 ">
+                        <small className="font-italic text-danger mb-3">
+                            {this.state.ErrorMessage.email}
+                        </small>
+                        <div className="mt-3 ">
                             <input
                                 type="password"
                                 name="password"
@@ -49,9 +85,15 @@ class loginForm extends Component {
                                 onChange={(event) => this.isChangeInput(event)}
                             />
                         </div>
+                        <small className="font-italic text-danger mb-3">
+                            {this.state.ErrorMessage.password}
+                        </small>
+                        <small className="font-italic text-danger mb-3">
+                            {this.isShowMess()}
+                        </small>
                         <button
                             type="reset"
-                            className="submit-login btn btn-primary"
+                            className="submit-login btn btn-primary mt-3"
                             onClick={() => this.isSubmit()}
                         >
                             Đăng nhập
@@ -81,17 +123,3 @@ class loginForm extends Component {
         )
     }
 }
-const mapStateToProps = (state, ownProps) => {
-    return {
-        account: state.account
-    }
-}
-
-const mapDispatchToProps = (dispatch, ownProps) => {
-    return {
-        handleLogin: (account) => {
-            dispatch({ type: 'CHECK_LOGIN', account })
-        }
-    }
-}
-export default connect(null, null)(loginForm)
