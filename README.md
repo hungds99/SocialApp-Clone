@@ -22,6 +22,6 @@ Chạy theo các bước:
 Chạy ứng dụng ở chế độ phát triển.\
 Mở [http://localhost:3000](http://localhost:3000) để xem nó trên trình duyệt.
 
-- Tạo mới một component : `npx crcf components/myComponent`
+- Tạo mới một component : `npx crcf components/myComponent` [https://github.com/snaerth/create-react-component-folder#readme](https://github.com/snaerth/create-react-component-folder#readme)
 
 ## Các chức năng
