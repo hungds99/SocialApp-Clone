@@ -14,10 +14,10 @@
 
 Chạy theo các bước:
 
-#### `git clone https://github.com/hungds99/SocialApp-Clone.git`
-#### `cd SocialApp-Clone`
-#### `npm install`
-#### `npm start`
+- Tải source về local: `git clone https://github.com/hungds99/SocialApp-Clone.git`
+- Di chuyển đến dự án: `cd SocialApp-Clone`
+- Cài đặt thư viện: `npm install`
+- Khởi chạy: `npm start`
 
 Chạy ứng dụng ở chế độ phát triển.\
 Mở [http://localhost:3000](http://localhost:3000) để xem nó trên trình duyệt.
