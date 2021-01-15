@@ -55,6 +55,7 @@
 		]
 	},
 	"devDependencies": {
+		"create-react-component-folder": "^0.3.7",
 		"redux-devtools": "^3.7.0"
 	}
 }
