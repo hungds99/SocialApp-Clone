@@ -70,7 +70,7 @@ class SignUp extends Component {
                     {/* End left */}
 
                     {/* Right */}
-                    <LoginForm
+                    <loginForm
                         handleLogin={(account) => this.handleLogin(account)}
                         ErrorMessage={this.state.ErrorMessage}
                     />
