@@ -30,10 +30,10 @@ function RightMenu() {
         <Drawer
             className={classes.drawer}
             variant="permanent"
+            anchor="right"
             classes={{
                 paper: classes.drawerPaper
             }}
-            anchor="right"
         >
             <Toolbar />
             <div className={classes.drawerContainer}>

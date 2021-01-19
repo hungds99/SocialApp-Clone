@@ -1,28 +1,31 @@
-import React from 'react'
+import CssBaseline from '@material-ui/core/CssBaseline'
 import { makeStyles } from '@material-ui/core/styles'
-import { Container, CssBaseline, Toolbar, Typography } from '@material-ui/core'
+import Toolbar from '@material-ui/core/Toolbar'
+import Typography from '@material-ui/core/Typography'
+import React from 'react'
 import Header from '../components/header/header'
 import LeftMenu from '../components/leftMenu/leftMenu'
 import RightMenu from '../components/rightMenu/rightMenu'
 
 const useStyles = makeStyles((theme) => ({
     root: {
-        display: 'flex',
-        flexWrap: 'wrap'
+        display: 'flex'
     },
-    container: {
+    content: {
         flexGrow: 1,
         padding: theme.spacing(3)
     }
 }))
-function Home() {
+
+export default function Home() {
     const classes = useStyles()
+
     return (
         <div className={classes.root}>
             <CssBaseline />
             <Header />
             <LeftMenu />
-            <Container className={classes.container}>
+            <main className={classes.content}>
                 <Toolbar />
                 <Typography paragraph>
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
@@ -57,12 +60,8 @@ function Home() {
                     accumsan lacus vel facilisis. Nulla posuere sollicitudin
                     aliquam ultrices sagittis orci a.
                 </Typography>
-            </Container>
+            </main>
             <RightMenu />
         </div>
     )
 }
-
-Home.propTypes = {}
-
-export default Home

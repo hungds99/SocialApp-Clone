@@ -30,10 +30,10 @@ function LeftMenu() {
         <Drawer
             className={classes.drawer}
             variant="permanent"
+            anchor="left"
             classes={{
                 paper: classes.drawerPaper
             }}
-            anchor="left"
         >
             <Toolbar />
             <div className={classes.drawerContainer}>
