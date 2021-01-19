@@ -1,0 +1,127 @@
+.container-body {
+    background: #f2f2f2;
+}
+header {
+    margin: auto;
+    width: 872px;
+    background: #fff;
+}
+header .container-profile {
+    position: relative;
+    margin: auto;
+    width: 872px;
+    height: 290px;
+}
+
+header .container-profile .profile {
+    position: relative;
+    width: 164px;
+    height: 164px;
+    margin: auto;
+    border-radius: 50%;
+    background: #f2f2f2;
+    top: 51%;
+}
+header .container-profile .profile img {
+    width: 156px;
+    height: 156px;
+    margin-left: 4px;
+    margin-top: 4px;
+}
+header .container-profile .edit-image {
+    display: none;
+    width: 156px;
+    height: 156px;
+    border-radius: 50%;
+    background: #959696;
+}
+header .container-profile .edit-image .text {
+    display: flex;
+    flex-direction: column;
+    padding-top: 65px;
+    color: #fff;
+    align-items: center;
+}
+header .container-profile .edit-image .text h6 {
+    font-size: 12px;
+    line-height: 1.4;
+    font-family: "Segoe UI";
+}
+header .container-profile .profile:hover .edit-image {
+    position: relative;
+    display: block;
+    margin-left: 4px;
+    margin-top: -156.5px;
+    opacity: 0.8;
+}
+header .container-profile .update-background {
+    position: absolute;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    top: 84%;
+    right: 3%;
+}
+header .container-profile button {
+    color: white;
+    padding: 2px 8px;
+    font-size: 16px;
+    margin: 4px 2px;
+}
+header .infor-user {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+header .infor-user i {
+    margin-left: 5px;
+    color: green;
+}
+
+header .infor-user h1 {
+    font-size: 1.5rem;
+}
+header .infor-user span {
+    color: rgb(128, 128, 128);
+    font-weight: 600;
+}
+header .infor-user textarea {
+    outline: none;
+    width: 310px;
+    height: 35px;
+    background: #f2f2f2;
+}
+
+header .profile-head-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: black;
+    padding-left: 2%;
+    padding-bottom: 1%;
+}
+header .profile-head-nav button {
+    padding: 2px 8px;
+}
+header .profile-head-nav a {
+    font-weight: 600;
+}
+
+header .profile-head-nav .active {
+    border-bottom: 3px solid green;
+}
+
+header .profile-head-nav .not-active:hover {
+    border-bottom: 3px solid #008000b0;
+}
+@media only screen and (max-width: 888px) {
+    header {
+        width: 100%;
+    }
+    header .container-profile {
+        width: 100%;
+        height: 290px;
+    }
+}
