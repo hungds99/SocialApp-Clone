@@ -1,4 +1,5 @@
 export const RouteLink = {
     home: '/',
-    signUp: '/signUp'
+    signUp: '/signUp',
+    profile:'/profile'
 }
