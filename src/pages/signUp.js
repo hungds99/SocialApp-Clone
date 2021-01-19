@@ -1,10 +1,9 @@
 import React, { Component } from 'react'
-import LoginForm from '../component/LoginForm'
-import RegisterForm from '../component/RegisterForm'
 import { dataConnect } from '../configs/firebaseConfig'
 import Cookies from 'js-cookie'
 import { Redirect } from 'react-router-dom'
-
+import LoginForm from '../components/loginForm/loginForm'
+import RegisterForm from '../components/registerForm/registerForm'
 class SignUp extends Component {
     constructor(props) {
         super(props)

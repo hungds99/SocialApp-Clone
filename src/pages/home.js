@@ -1,6 +1,9 @@
 import React from 'react'
 import { makeStyles } from '@material-ui/core/styles'
 import { Container, CssBaseline, Toolbar, Typography } from '@material-ui/core'
+import Header from '../components/header/header'
+import LeftMenu from '../components/leftMenu/leftMenu'
+import RightMenu from '../components/rightMenu/rightMenu'
 
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -55,6 +58,7 @@ function Home() {
                     aliquam ultrices sagittis orci a.
                 </Typography>
             </Container>
+            <RightMenu />
         </div>
     )
 }

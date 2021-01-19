@@ -24,7 +24,7 @@ const useStyles = makeStyles((theme) => ({
         overflow: 'auto'
     }
 }))
-function LeftMenu() {
+function RightMenu() {
     const classes = useStyles()
     return (
         <Drawer
@@ -33,7 +33,7 @@ function LeftMenu() {
             classes={{
                 paper: classes.drawerPaper
             }}
-            anchor="left"
+            anchor="right"
         >
             <Toolbar />
             <div className={classes.drawerContainer}>
@@ -69,6 +69,6 @@ function LeftMenu() {
     )
 }
 
-LeftMenu.propTypes = {}
+RightMenu.propTypes = {}
 
-export default LeftMenu
+export default RightMenu
