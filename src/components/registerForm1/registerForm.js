@@ -5,6 +5,7 @@ import isEmpty from 'validator/lib/isEmpty'
 import isEmail from 'validator/lib/isEmail'
 import './registerForm.css'
 
+// fix Import
 class RegisterForm extends Component {
     constructor(props) {
         super(props)

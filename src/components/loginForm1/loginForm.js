@@ -4,6 +4,7 @@ import isEmail from 'validator/lib/isEmail'
 import isEmpty from 'validator/lib/isEmpty'
 import './loginForm.css'
 
+// Fix Import
 export default class LoginForm extends Component {
     constructor(props) {
         super(props)
