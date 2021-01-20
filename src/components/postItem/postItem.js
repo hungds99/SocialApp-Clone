@@ -60,7 +60,7 @@ export default function PostItem() {
                         <MoreVertIcon />
                     </IconButton>
                 }
-                title="Shrimp and Chorizo Paella"
+                title="Đinh Sỹ Hùng"
                 subheader="September 14, 2016"
             />
             <CardMedia

@@ -7,6 +7,7 @@ import CreatePost from '../components/createPost/createPost'
 import Header from '../components/header/header'
 import LeftMenu from '../components/leftMenu/leftMenu'
 import PostItem from '../components/postItem'
+import PostList from '../components/postList'
 import RightMenu from '../components/rightMenu/rightMenu'
 
 const useStyles = makeStyles((theme) => ({
@@ -30,9 +31,7 @@ export default function Home() {
             <main className={classes.content}>
                 <Toolbar />
                 <CreatePost />
-                <PostItem />
-                <PostItem />
-                <PostItem />
+                <PostList />
             </main>
             <RightMenu />
         </div>
