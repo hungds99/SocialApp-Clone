@@ -38,24 +38,15 @@ function LeftMenu() {
             <Toolbar />
             <div className={classes.drawerContainer}>
                 <List>
-                    {['Inbox', 'Starred', 'Send email', 'Drafts'].map(
-                        (text, index) => (
-                            <ListItem button key={text}>
-                                <ListItemIcon>
-                                    {index % 2 === 0 ? (
-                                        <InboxIcon />
-                                    ) : (
-                                        <MailIcon />
-                                    )}
-                                </ListItemIcon>
-                                <ListItemText primary={text} />
-                            </ListItem>
-                        )
-                    )}
-                </List>
-                <Divider />
-                <List>
-                    {['All mail', 'Trash', 'Spam'].map((text, index) => (
+                    <ListItem>
+                        <h4>Trang Chủ</h4>
+                    </ListItem>
+                    {[
+                        'Khám phá',
+                        'Theo dõi',
+                        'Tìm bạn bè',
+                        'Trang của bạn'
+                    ].map((text, index) => (
                         <ListItem button key={text}>
                             <ListItemIcon>
                                 {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}

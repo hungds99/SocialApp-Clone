@@ -26,25 +26,25 @@ class RegisterForm extends Component {
     isValidate = () => {
         const msg = {}
         if (isEmpty(this.state.firstName)) {
-            msg.firstName = 'Nhập họ của bạn'
+            msg.firstName = 'Nhập họ của bạn.'
         }
 
         if (isEmpty(this.state.lastName)) {
-            msg.lastName = 'Nhập tên của bạn'
+            msg.lastName = 'Nhập tên của bạn.'
         }
 
         if (isEmpty(this.state.email)) {
-            msg.email = 'Nhập địa chỉ email của bạn!!!'
+            msg.email = 'Nhập địa chỉ email của bạn !!!'
         } else if (!isEmail(this.state.email)) {
-            msg.email = 'Nhập đúng địa chỉ email của bạn!!!'
+            msg.email = 'Nhập đúng địa chỉ email của bạn !!!'
         }
 
         if (isEmpty(this.state.password)) {
-            msg.password = 'Nhập mật khẩu của bạn'
+            msg.password = 'Nhập mật khẩu của bạn.'
         }
 
         if (isEmpty(this.state.day && this.state.month && this.state.year)) {
-            msg.date = 'Chọn ngày tháng năm sinh của bạn'
+            msg.date = 'Chọn ngày tháng năm sinh của bạn.'
         }
 
         this.setState({ ErrorMessage: msg })
