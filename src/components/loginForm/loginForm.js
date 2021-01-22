@@ -15,15 +15,12 @@ export default class LoginForm extends Component {
         }
     }
 
-    // handle input
     isChangeInput = (event) => {
-        const { name } = event.target
-        const { value } = event.target
+        const { name, value } = event.target
 
         this.setState({ [name]: value })
     }
 
-    // Validate input Login
     isValidate = () => {
         const msg = {}
         if (isEmpty(this.state.email)) {

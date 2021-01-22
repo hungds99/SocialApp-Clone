@@ -9,3 +9,21 @@ export const getPostsFeedDiscoveryAPI = (limit, page) => {
         }
     )
 }
+
+export const uploadMediaImage = (file) => {
+    return axios.post('https://upload.gapo.vn/media/v1.0/images', file, {
+        headers: {
+            Authorization: `Bearer ${tokenConfig}`,
+            Contentype: 'multipart/form-data'
+        }
+    })
+}
+
+export const createPost = (post) => {
+    return axios.post('https://api.gapo.vn/main/v1.4/post/create', post, {
+        headers: {
+            Authorization: `Bearer ${tokenConfig}`,
+            Contentype: 'multipart/form-data'
+        }
+    })
+}
