@@ -1,7 +1,7 @@
 import React, { Component, useEffect } from 'react';
 import { useState } from 'react';
 
-function Textarea({user, setUser, displayEdition, setDisplayEdition}){
+function ProfileTextarea({user, setUser, displayEdition, setDisplayEdition}){
     const [text, setText] = useState(user.description);
     const [count, setCount] = useState(100 - text.length);
 
@@ -60,4 +60,4 @@ function Textarea({user, setUser, displayEdition, setDisplayEdition}){
     )
 }
 
-export default Textarea;
+export default ProfileTextarea;

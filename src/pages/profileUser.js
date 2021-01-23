@@ -1,11 +1,11 @@
 import React, { Component, useEffect } from 'react';
-import './style.css';
-import Header from './Header';
-import { useState } from 'react';
-import defaultUser from './default-users.png';
-import defaultCover from './default-cover.jpg';
-function Individual(){
 
+import { useState } from 'react';
+import ProfileHeader from '../components/profileHeader/profileHeader';
+import defaultCover from '../assets/defaultCover.jpg';
+import defaultUser from '../assets/defaultUser.jpg';
+
+function ProfileUser(){
      // information user
     const userInfor = {
         phone:'0585304043',
@@ -30,15 +30,13 @@ function Individual(){
          // thông tinh những bài post đã đăng
         post:[]
     };
-
     const [user, setUser] = useState(userInfor);
-
     return(
         <div class="container-body">
-            <Header user={user} setUser={setUser}/>
+            <ProfileHeader user={user} setUser={setUser}/>
         </div>
     )
 }
 
 
-export default Individual;
+export default ProfileUser;

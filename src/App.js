@@ -1,7 +1,8 @@
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
-import Individual from './component/Profile/Individual'
+
 import { RouteLink } from './constants'
 import Home from './pages/home'
+import ProfileUser from './pages/profileUser'
 import Profile from './pages/profile'
 import SignUp from './pages/signUp'
 
@@ -12,6 +13,7 @@ function App() {
                 <Switch>
                     <Route path={RouteLink.home} component={Home} exact />
                     <Route path={RouteLink.signUp} component={SignUp} />
+                     <Route path={RouteLink.profile} exact component={ProfileUser} /> 
                     <Route
                         path={RouteLink.profile}
                         exact
