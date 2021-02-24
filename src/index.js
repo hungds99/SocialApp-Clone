@@ -8,6 +8,7 @@ import store from './redux/store';
 import reportWebVitals from './reportWebVitals';
 
 // commit
+// Commit in 2021 New Year
 
 ReactDOM.render(
   <Provider store={store}>
